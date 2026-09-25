@@ -19,10 +19,10 @@
 
 | 项 | 值 |
 |---|---|
-| 域名 | **rubinite.guide**（RDAP 2026-09-25 验证可注册，**待注册**）|
+| 域名 | **rubinite.xyz** ✅ 已注册（2026-09-25，¥13.83/年；.guide 要 ¥222 所以选了 .xyz）|
 | Worker | `rubinite-guide` ✅ 已部署 |
-| 预览 | https://rubinite-guide.493129720ljw.workers.dev |
-| 仓库 | 本地 `~/Desktop/david/Ship/rubinite-guide`（git 已 init，未建远端）|
+| 正式 | ✅ **https://rubinite.xyz**（+ workers.dev 预览）|
+| 仓库 | ✅ https://github.com/ken-fs/rubinite-guide |
 | 技术 | 纯静态 HTML + 内联 CSS（2 页）——测试站不套模板 |
 | 页面 | `/`（boss 名单+难度）· `/talismans/`（29 talisman + 4 build）|
 
@@ -44,13 +44,19 @@
 | weareplaystation.fr | boss 攻略（法语）| 单站 |
 | Steam Community | 游戏 hub | 一手 |
 
-## 五、待办（人工）
+## 五、接线记录（全部完成 2026-09-25）
 
-1. **注册 rubinite.guide**（Spaceship，RDAP 已验证可注册）
-2. 建 GitHub 仓库 + push（或保持本地，测试站可不入库）
-3. CF 绑自定义域（zone active 后）
-4. GSC 加属性 + 服务账号 Owner + 提交 sitemap
-5. 加进 `scripts/verify-baseline.json`
+| 步骤 | 方式 |
+|---|---|
+| 域名注册 | Spaceship 网页（用户付款，¥13.83）|
+| NS → Cloudflare | `spaceship.mjs ns`（API，端点需 provider:"custom"）|
+| CF zone 创建 + 激活检查 | **Cloudflare MCP**（full access token 能跑 activation_check，wrangler OAuth 不行）|
+| Worker 部署 + 绑域名 | `wrangler deploy`（routes 在 wrangler.jsonc）|
+| GSC 属性 | 用户手动加 + 服务账号 Owner |
+| sitemap 提交 | `node scripts/gsc.mjs sitemaps` ✅ |
+| 舰队表 / 验收基线 / Clash 白名单 | 已加 |
+
+**已知问题**：本地 Playwright 访问 rubinite.xyz 报 NAME_NOT_RESOLVED（Clash fake-IP 未刷新，重启 Clash 生效；curl 与外部访问正常）
 
 ## 六、衡量方式
 
