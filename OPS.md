@@ -24,7 +24,7 @@
 | 正式 | ✅ **https://rubinite.xyz**（+ workers.dev 预览）|
 | 仓库 | ✅ https://github.com/ken-fs/rubinite-guide |
 | 技术 | 纯静态 HTML + 内联 CSS（2 页）——测试站不套模板 |
-| 页面 | `/`（boss 名单+难度）· `/talismans/`（29 talisman + 4 build）|
+| 页面 | **5 页**：`/`（boss 名单+难度）· `/talismans/`（29 talisman + 4 build）· `/chests/`（8 宝箱位置）· `/achievements/`（38 成就分组）· `/endings/`（双结局 + 真结局步骤）|
 
 ## 三、内容与数据源
 
@@ -32,6 +32,15 @@
 |---|---|---|
 | `/` | 13 个唯一 boss（10 幻象 + 13 真实 = 23 场）/ HP / 阶段 / 位置 / 招式 / 掉落 / 难度排名 | rubinite.wiki.gg（MediaWiki API 全量）+ 机制文档 |
 | `/talismans/` | 29 个 talisman 全表（槽位/效果/来源）+ 4 套 build（早期/中期/Real/刷 boss） | 同上 |
+| `/chests/` | 8 个宝箱位置 + 内容 + **每个解锁哪些 talisman** + 修理优先级 | 同上 |
+| `/achievements/` | 38 成就按类型分组（剧情/条件击杀/收集）+ 100% 路线 | 同上 |
+| `/endings/` | 双结局结构 + 真结局 6 步 + Real World 变化 + True Difficulty | 同上 |
+
+**页面优先级依据**（autocomplete 实测，2026-09-25）：
+```
+true ending  → 4 变体 ★ / chests → 4 变体 ★ / achievements → 4 变体 ★
+endings      → 4 变体 ★ / walkthrough → 2 / build → 2 / characters·memories·boss order → 弱
+```
 
 **SEO 齐备**：canonical · OG · FAQ schema ×2 · sitemap.xml · robots.txt · 404
 
