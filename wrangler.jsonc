@@ -6,5 +6,9 @@
     "directory": "./public",
     "not_found_handling": "404-page",
     "html_handling": "auto-trailing-slash"
-  }
+  },
+  // 自定义域名（zone active 后再部署，pending 时绑会证书失败——AGENTS.md 坑 #2）
+  "routes": [
+    { "pattern": "rubinite.xyz", "custom_domain": true }
+  ]
 }
