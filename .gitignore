@@ -1,2 +1,6 @@
 node_modules/
 .wrangler/
+
+# 部署标记由 scripts/write-deploy-marker.mjs 在构建期写（CI 读 WORKERS_CI_COMMIT_SHA）。
+# 入库会让陈旧 SHA 盖住真值，巡检就会误报。
+public/.well-known/

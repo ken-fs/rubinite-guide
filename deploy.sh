@@ -7,9 +7,9 @@
 set -e
 cd "$(dirname "$0")"
 
-SHA=$(git rev-parse HEAD)
-mkdir -p public/.well-known
-echo "$SHA" > public/.well-known/deploy.txt
+# 标记由脚本统一写（CI 走同一个脚本，读 WORKERS_CI_COMMIT_SHA）
+node scripts/write-deploy-marker.mjs
+SHA=$(cat public/.well-known/deploy.txt)
 
 export https_proxy=http://127.0.0.1:7897 http_proxy=http://127.0.0.1:7897
 npx wrangler deploy
