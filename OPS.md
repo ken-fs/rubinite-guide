@@ -76,3 +76,9 @@ node scripts/gsc.mjs inspect "https://rubinite.guide/"
 # 或直接看排名
 cd game-name-radar && node lib/steam-gate.mjs "Rubinite"   # 复查工具需求是否还在
 ```
+
+---
+
+## 四、新鲜度说明（2026-10-12）
+
+每日巡检按「>7 天没内容更新」点名本站。**上游已静默**：游戏最后一个 patch 2026-08-15（Steam 新闻止于 09-18 SoulSale 活动），rubinite.wiki.gg 最后编辑 2026-09-17。本站数据仍然准确，**没有可更的内容**——后续点名按此记录豁免，除非上游复活（新 patch / wiki 新编辑）。
